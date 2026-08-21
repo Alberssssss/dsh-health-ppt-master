@@ -2,21 +2,31 @@
 
 English | [中文](README.zh.md)
 
-Private experimental profile bundle that installs the `health-ppt-master` skill provider and its `agent/pre-step` soft router as one Cordis plugin. The bundle contributes one `health-ppt-master` row, so installation, disablement, reload, and removal apply to both contributions together.
+Private experimental profile bundle that installs the `health-ppt-master` skill provider and its `agent/pre-step` soft router as one Cordis plugin. The bundle contributes one `health-ppt-master` row, so installation, disablement, reload, and removal apply to both contributions together. The repository contains auditable source, standalone tests, a self-contained Git build, and committed runtime artifacts.
 
 A bundle is a deployment unit, not a complete application context. This pilot proves installation and lifecycle, not Hermes behavior equivalence.
 
 ## Installation and lifecycle
 
-Install the tagged, prebuilt bundle into the Web profile over HTTPS:
+Install the tagged, prebuilt bundle into the Web profile over HTTPS. This is the recommended one-line path because it uses the committed runtime files and requires no install-time build permission:
 
 ```sh
-dsh plugin --profile web add --fetch-timeout=300000 https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/refs/tags/v0.1.0-rc.9
+dsh plugin --profile web add --fetch-timeout=300000 https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/refs/tags/v0.1.0-rc.10
 ```
 
 When running dsh from a source checkout, use `pnpm dsh` in place of `dsh`. Restart a running Web app after installation, then verify the layer with `dsh --profile web --dump-config`.
 
-The fixed-tag GitHub archive uses HTTPS and the explicit five-minute fetch timeout accommodates slow links without relying on Git or SSH transport. This repository commits the runtime `lib/` files and defines no install lifecycle scripts. GitHub installation does not build the package or ask pnpm to execute package-owned installation code.
+The fixed-tag GitHub archive uses HTTPS and the explicit five-minute fetch timeout accommodates slow links without relying on Git or SSH transport. This repository commits the runtime `lib/` files, so archive installation does not need to compile TypeScript.
+
+The repository is also a self-building Git package. A direct Git install runs its `prepare` script from `src/`, so pnpm 11 requires an allowlist key containing the exact Git URL and commit. Replace both `<commit>` values with the same trusted release commit:
+
+```sh
+dsh plugin --profile web add --fetch-timeout=300000 --allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>' 'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'
+```
+
+The Git command deliberately pins an immutable commit. Its build permission allows repository code to execute on the host during installation, outside the agent sandbox; use the prebuilt archive unless source rebuilding is specifically required.
+
+pnpm stores that exact source-build permission in the profile's `pnpm-workspace.yaml`. Removing the package removes the plugin and bundle row but does not remove this trust record. After a source-build trial, delete only the matching `allowBuilds` entry and run `pnpm install` in the profile directory if the profile must return to its pre-install state. The recommended prebuilt archive creates no build-permission record.
 
 To stop both the provider and router without uninstalling the package, add this override to the profile's `cordis.patch.yml`:
 
@@ -41,11 +51,19 @@ Run the standalone source checks with Node 22.19 or later and pnpm 11:
 
 ```sh
 pnpm install --frozen-lockfile
+pnpm build
 pnpm typecheck
 pnpm test
+pnpm test:coverage
 ```
 
-The tests exercise provider registration and disposal, positive and negative routing, authentic-message filtering, waterfall rejection and abort behavior, Loader export handling, and the package-owned session invariant.
+The `prepare` script invokes a dedicated tsdown configuration and declaration build directly from this repository. It has no project references, sibling checkout assumptions, or `workspace:` dependency specifiers. The tests exercise provider registration and disposal, positive and negative routing, authentic-message filtering, waterfall rejection and abort behavior, Loader export handling, the package-owned session invariant, distribution metadata, and runtime preflight behavior.
+
+After installation, inspect local capabilities without printing credential values:
+
+```sh
+dsh plugin --profile web exec dsh-health-ppt-master-doctor --json
+```
 
 ## Trial profile isolation
 
@@ -63,7 +81,7 @@ The bundle does not modify presets and does not include or register `AGENTS.md`,
 
 ## Runtime behavior
 
-The immutable provider publishes the packaged `assets/health-ppt-master/` directory as the skill resource base and removes YAML frontmatter before returning the skill body. The runtime assets contain `SKILL.md`, `requirements.txt`, `docs/`, `references/`, `scripts/`, `templates/`, and `workflows/`. Source-checkout projects, tests, `.env.example`, Python caches, credentials, and runtime state are excluded.
+The immutable provider publishes the packaged `assets/health-ppt-master/` directory as the skill resource base and removes YAML frontmatter before returning the skill body. The runtime assets contain `SKILL.md`, `requirements-core.txt`, `requirements.txt`, `docs/`, `references/`, `scripts/`, `templates/`, and `workflows/`. Source-checkout projects, tests, `.env.example`, Python caches, credentials, and runtime state are excluded.
 
 The router is a narrow extraction of the Hermes `research-skill-router` presentation route:
 
@@ -76,16 +94,18 @@ The Hermes router's manuscript routes, project-resume state, output transforms, 
 
 ## External requirements
 
-Discovery and routing are self-contained. Executing the presentation workflow is not self-contained and still requires deployment work for all applicable items below:
+Discovery, routing, skill loading, preflight, project initialization, quality checking, and the local SVG-to-editable-PPTX path are packaged. The core export path requires Python 3 plus the packages in `requirements-core.txt`; the skill installs them only into a workspace-owned virtual environment when the active DSH permission policy allows it. It never modifies the package directory or host-global Python installation.
+
+Run only the capability checks required by the selected workflow. The following features still require deployment resources outside the plugin:
 
 - The external `document-parser` dispatcher used for PDF, Office, image, URL, and OCR ingestion.
-- Python requirements and system programs such as LibreOffice, Chromium/Playwright, FFmpeg/ffprobe, fonts, and rendering libraries used by the selected workflow.
+- Optional Python requirements and system programs such as LibreOffice, a Playwright Chromium browser, FFmpeg/ffprobe, fonts, and rendering libraries used by the selected workflow.
 - Trusted credential injection for image, search, and narration providers. The package contains no `.env` or key and does not rely on parent-process environment inheritance.
 - DSH mappings for source-workflow tool names such as `read_file` and `run_in_background`, plus browser reachability and preview-process ownership.
 - A DSH workspace/state policy for projects and resumable work. Packaged `projects/` examples and Hermes home paths are not used.
 - Product-specific delivery presentation. The Hermes frontend's bare-path parsing and any external output-governance plugin do not accompany this bundle.
 
-Missing external resources do not prevent the plugin from loading. They do prevent a functional-equivalence claim and may block an actual deck workflow at its first unmet prerequisite.
+Missing optional resources do not prevent the plugin or core export path from loading. The packaged preflight fails only groups explicitly required for the selected workflow and names the missing module, program, or path. External resources still prevent a complete Hermes-equivalence claim.
 
 ## Model Experience
 
@@ -129,5 +149,6 @@ The catalog preserves the stable prefix for a fixed enabled composition. The loa
 
 - The package is private and experimental; it is available for local profile installation, not an official release dependency.
 - The deterministic router is a recommendation, not a dispatcher or proof of skill use; session evidence must distinguish the route hint from the later `skill` tool call.
-- This phase does not validate real document ingestion, image generation, preview interaction, editable PPTX export, visual fidelity, medical correctness, output governance, or final-answer parity with Hermes.
-- Functional migration requires explicit owners for external tools, credentials, workspace state, browser lifecycle, delivery presentation, and keyless plus real-model deck snapshots.
+- The package does not make document ingestion, image generation, browser preview, narration, LibreOffice conversion, provider credentials, medical correctness, output governance, or final-answer behavior self-contained.
+- Core editable PPTX export is tested independently; complete visual fidelity and real-model deck quality still require representative source documents, rendered-slide comparison, and application-level snapshots.
+- Full Hermes equivalence requires explicit owners for external tools, credentials, workspace state, browser lifecycle, and delivery presentation.

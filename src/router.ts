@@ -21,12 +21,17 @@ const DECK_TERMS = [
 
 const PRODUCTION_TERMS = [
   '生成', '制作', '做成', '做个', '做一个', '做一份', '做份', '做一版', '写个',
-  '帮我做', '创建', '新建', '重做', '重新做', '优化', '美化', '排版', '套用',
+  '帮我做', '创建', '新建', '准备', '设计', '重做', '重新做', '优化', '美化', '排版', '套用',
   '填充', '填进', '填到', '参照', '仿照', '出一版', '出个', '整理', '改成',
   '改一下', '按这版', '照这版', '照这个做',
 ] as const
 
 const ENGLISH_PRODUCTION = /\b(?:create|make|build|generate|redesign|edit|optimize|polish)\b/i
+
+const REQUEST_TERMS = [
+  '请', '帮我', '给我', '需要', '想要', '麻烦', '能否', '可以帮', '我要',
+  'please ', 'need ', 'want ', 'could you', 'can you',
+] as const
 
 const READ_ONLY_TERMS = [
   '读取', '读一下', '打开', '看看', '总结', '提取', '导出', '转成', '转换',
@@ -62,6 +67,11 @@ const DOMAIN_DELIVERABLES = [
   '文献汇报', '大会发言', '开题报告', '中期汇报', '结题汇报',
 ] as const
 
+const INFORMATIONAL_QUESTION = /(?:是什么|谁(?:开发|制作|发明)|有什么?区别|优缺点|为什么|几分钟|多长时间|多久|几点|怎么评价|如何评价|\bwhat\b|\bwho\b|\bwhen\b|\bwhy\b|\bdifference\b|\bpros and cons\b|\bstarts? at\b)/i
+const DECK_TO_NON_DECK = /(?:pptx?|powerpoint|幻灯片?|演示文稿).{0,24}(?:转|改|转换|导出|生成|convert|export|make).{0,24}(?:pdf|markdown|md|png|图片|图像|video|视频)/i
+const VERB_FIRST_NON_DECK = /(?:convert|export|turn|make).{0,24}(?:pptx?|powerpoint|幻灯片?|演示文稿).{0,12}(?:to|into|成).{0,12}(?:pdf|markdown|md|png|images?|video|图片|图像|视频)/i
+const TARGET_FIRST_NON_DECK = /(?:make|create|生成).{0,12}(?:pdf|markdown|md|png|images?|video|图片|图像|视频).{0,16}(?:from|基于|从).{0,12}(?:pptx?|powerpoint|幻灯片?|演示文稿)/i
+
 function includesAny(text: string, terms: readonly string[]): boolean {
   return terms.some(term => text.includes(term))
 }
@@ -75,6 +85,9 @@ export function matchesHealthPptMaster(value: string): boolean {
   const text = value.trim().toLowerCase()
   if (text.length === 0) return false
   const compact = text.replace(/\s+/g, '')
+  if (DECK_TO_NON_DECK.test(text)
+    || VERB_FIRST_NON_DECK.test(text)
+    || TARGET_FIRST_NON_DECK.test(text)) return false
   const producesDeck = includesAny(compact, PRODUCTION_TERMS) || ENGLISH_PRODUCTION.test(text)
   if (!producesDeck && includesAny(text, READ_ONLY_TERMS)) return false
   const hasDeckTerm = includesAny(text, DECK_TERMS)
@@ -82,7 +95,11 @@ export function matchesHealthPptMaster(value: string): boolean {
   const hasTemplateAction = includesAny(text, TEMPLATE_ACTIONS)
   const hasDomainCombination = includesAny(text, DOMAIN_MARKERS)
     && includesAny(text, DOMAIN_DELIVERABLES)
-  return hasDeckTerm || hasDeliverable || hasTemplateAction || hasDomainCombination
+  if (!hasDeckTerm && !hasDeliverable && !hasTemplateAction && !hasDomainCombination) return false
+  if (!producesDeck && INFORMATIONAL_QUESTION.test(text)) return false
+  const hasRequest = includesAny(text, REQUEST_TERMS)
+  const terseDeliverable = compact.length <= 24 && !/[。.!！?？]/.test(text)
+  return hasTemplateAction || producesDeck || hasRequest || terseDeliverable
 }
 
 function textOf(message: UserMessage): string {

@@ -13,4 +13,3 @@ export declare const inject: string[];
  * @param ctx - Cordis context carrying the skill and agent services.
  */
 export declare function apply(ctx: Context): void;
-//# sourceMappingURL=index.d.ts.map

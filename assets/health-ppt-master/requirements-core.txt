@@ -1,0 +1,7 @@
+# Deterministic local SVG-to-editable-PPTX path.
+# Install into a workspace-owned virtual environment, never into this package directory.
+python-pptx>=1.0.2,<2
+Pillow>=9,<13
+svglib>=1.5.1,<1.6
+reportlab>=4,<5
+PyYAML>=6,<7

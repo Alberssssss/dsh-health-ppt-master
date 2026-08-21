@@ -20,6 +20,7 @@
 典型的端到端工作流：
 
 ```bash
+python3 scripts/dsh_preflight.py --require core --workspace <workspace>
 python3 scripts/source_to_md/pdf_to_md.py <file.pdf>
 # or
 python3 scripts/source_to_md/ppt_to_md.py <deck.pptx>
@@ -42,6 +43,7 @@ python3 scripts/update_repo.py
 
 | 领域 | 主要脚本 | 文档 |
 |------|-----------------|---------------|
+| DSH 预检 | `dsh_preflight.py` | [Skill 运行说明](../SKILL.md) |
 | 格式转换 | `source_to_md/pdf_to_md.py`、`source_to_md/doc_to_md.py`、`source_to_md/excel_to_md.py`、`source_to_md/ppt_to_md.py`、`source_to_md/web_to_md.py` | [格式转换](./docs/conversion.md) |
 | 项目管理 | `project_manager.py`、`batch_validate.py`、`generate_examples_index.py`、`error_helper.py`、`pptx_template_import.py`、`template_fill_pptx.py` | [项目](./docs/project.md) |
 | SVG 流水线 | `finalize_svg.py`、`svg_to_pptx.py`、`total_md_split.py`、`svg_quality_checker.py`、`animation_config.py`、`notes_to_audio.py` | [SVG 流水线](./docs/svg-pipeline.md) |
@@ -61,6 +63,16 @@ python3 scripts/source_to_md/doc_to_md.py <file.docx>
 python3 scripts/source_to_md/excel_to_md.py <workbook.xlsx>
 python3 scripts/source_to_md/web_to_md.py <url>
 ```
+
+DSH 能力检查：
+
+```bash
+python3 scripts/dsh_preflight.py --require core --workspace <workspace>
+python3 scripts/dsh_preflight.py --require ingestion --require document-parser --document-parser-dir <path>
+python3 scripts/dsh_preflight.py --require preview --json
+```
+
+只有通过 `--require` 显式要求的能力组会影响退出状态。报告会指出缺失的模块、程序和路径，但不会读取或输出凭据值。
 
 项目初始化：
 
@@ -131,4 +143,4 @@ python3 scripts/update_repo.py --skip-pip
 - [故障排查](./docs/troubleshooting.md)
 - [Skill 入口](../SKILL.md)
 
-_最后更新：2026-04-09_
+_最后更新：2026-08-21_

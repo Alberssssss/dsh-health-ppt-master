@@ -1,5 +1,5 @@
 # Git blob hash of each side at the last confirmed-consistent state. Both
 # languages carry equal authority; after editing either side, update both
 # values with `git hash-object README.md README.zh.md`.
-README.md: d178ede5e0737804ae45a8a1d9d490c224e46f16
-README.zh.md: ecf32b51953c7812cdf55158e13b62d75345c76b
+README.md: 4a5df2cf13e78cfbc1713dc9f5309de02641bd93
+README.zh.md: c458e80531e7c932e3200a55e532a4053071b545

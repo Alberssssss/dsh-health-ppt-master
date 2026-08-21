@@ -20,6 +20,7 @@ This directory contains user-facing scripts for conversion, project setup, direc
 Typical end-to-end workflow:
 
 ```bash
+python3 scripts/dsh_preflight.py --require core --workspace <workspace>
 python3 scripts/source_to_md/pdf_to_md.py <file.pdf>
 # or
 python3 scripts/source_to_md/ppt_to_md.py <deck.pptx>
@@ -42,6 +43,7 @@ python3 scripts/update_repo.py
 
 | Area | Primary scripts | Documentation |
 |------|-----------------|---------------|
+| DSH preflight | `dsh_preflight.py` | [Skill runtime note](../SKILL.md) |
 | Conversion | `source_to_md/pdf_to_md.py`, `source_to_md/doc_to_md.py`, `source_to_md/excel_to_md.py`, `source_to_md/ppt_to_md.py`, `source_to_md/web_to_md.py` | [docs/conversion.md](./docs/conversion.md) |
 | Project management | `project_manager.py`, `batch_validate.py`, `generate_examples_index.py`, `error_helper.py`, `pptx_template_import.py`, `template_fill_pptx.py` | [docs/project.md](./docs/project.md) |
 | SVG pipeline | `finalize_svg.py`, `svg_to_pptx.py`, `total_md_split.py`, `svg_quality_checker.py`, `animation_config.py`, `notes_to_audio.py` | [docs/svg-pipeline.md](./docs/svg-pipeline.md) |
@@ -61,6 +63,16 @@ python3 scripts/source_to_md/doc_to_md.py <file.docx>
 python3 scripts/source_to_md/excel_to_md.py <workbook.xlsx>
 python3 scripts/source_to_md/web_to_md.py <url>
 ```
+
+DSH capability check:
+
+```bash
+python3 scripts/dsh_preflight.py --require core --workspace <workspace>
+python3 scripts/dsh_preflight.py --require ingestion --require document-parser --document-parser-dir <path>
+python3 scripts/dsh_preflight.py --require preview --json
+```
+
+Only explicitly required groups affect the exit status. The report names missing modules, programs, and paths but never reads or prints credential values.
 
 Project setup:
 
@@ -131,4 +143,4 @@ python3 scripts/update_repo.py --skip-pip
 - [Troubleshooting](./docs/troubleshooting.md)
 - [Skill Entry](../SKILL.md)
 
-_Last updated: 2026-04-09_
+_Last updated: 2026-08-21_

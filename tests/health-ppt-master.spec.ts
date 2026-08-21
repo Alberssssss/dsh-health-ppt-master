@@ -7,7 +7,8 @@ import { createUserMessage, type UserMessage } from '@deepseek-ai/dsh-llm'
 import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
 import SkillRegistry from '@deepseek-ai/dsh-skill'
 import { describe, expect, it } from 'vitest'
-import * as HealthPptMaster from '@deepseek-ai/dsh-experimental-health-ppt-master'
+import * as BuiltHealthPptMaster from '@deepseek-ai/dsh-experimental-health-ppt-master'
+import * as HealthPptMaster from '../src/index.ts'
 import {
   matchesHealthPptMaster,
   ROUTER_HINT,
@@ -75,12 +76,14 @@ describe('experimental health-ppt-master bundle plugin', () => {
     expect(loaded?.content.startsWith('---')).toBe(false)
     expect(loaded?.content).toContain('# Health PPT Master Skill')
     expect(loaded?.content).toContain('## DSH pilot runtime note')
+    expect(loaded?.content).toContain('dsh_preflight.py --require core')
     expect(loaded?.content).toContain('python3 <skill-dir>/scripts/svg_to_pptx.py')
     expect(loaded?.content).not.toContain('${SKILL_DIR}')
     expect(loaded?.content).not.toContain('/home/ubuntu/.hermes')
     expect(loaded?.resourceBase).toEqual({ kind: 'directory', path: resourcePath })
     expect((await readdir(resourcePath)).sort()).toEqual([
-      'SKILL.md', 'docs', 'references', 'requirements.txt', 'scripts', 'templates', 'workflows',
+      'SKILL.md', 'docs', 'references', 'requirements-core.txt', 'requirements.txt', 'scripts',
+      'templates', 'workflows',
     ])
     await expect(access(new URL('../assets/health-ppt-master/projects/', import.meta.url))).rejects.toThrow()
     await expect(access(new URL('../assets/health-ppt-master/tests/', import.meta.url))).rejects.toThrow()
@@ -106,6 +109,10 @@ describe('experimental health-ppt-master bundle plugin', () => {
     '我是肿瘤科的，帮我整理科室质控工作汇报',
     '参照这个ppt的模板，用我的资料做一版新的病例汇报',
     'Please create a clinical case presentation.',
+    '请基于这篇论文准备一套 journal club slides',
+    'Need a slide deck for tomorrow\'s tumor board.',
+    'Polish the typography in this PowerPoint.',
+    '病例汇报PPT',
   ])('matches a deck-production request: %s', (text) => {
     expect(matchesHealthPptMaster(text)).toBe(true)
   })
@@ -122,6 +129,15 @@ describe('experimental health-ppt-master bundle plugin', () => {
     '这个pptx有几页',
     '帮我总结这份临床论文',
     '今天天气怎么样？',
+    'PowerPoint 是谁开发的？',
+    'PPT 和 PDF 有什么区别？',
+    '病例汇报一般控制在几分钟？',
+    '如何评价一场学术汇报？',
+    'The presentation starts at 3pm.',
+    'Can you summarize this PPT and list the key points?',
+    '把这个PPT改成PDF',
+    'Convert this PowerPoint to Markdown.',
+    'Please make a PDF from this PowerPoint.',
   ])('does not claim a read-only or unrelated request: %s', (text) => {
     expect(matchesHealthPptMaster(text)).toBe(false)
   })
@@ -188,10 +204,10 @@ describe('experimental health-ppt-master bundle plugin', () => {
   })
 
   it('keeps the function plugin namespace through Loader unwrapExports', () => {
-    expect('default' in HealthPptMaster).toBe(false)
+    expect('default' in BuiltHealthPptMaster).toBe(false)
     const loader = Object.create(Loader.prototype) as Loader
-    const unwrapped = loader.unwrapExports(HealthPptMaster) as Record<string, unknown>
-    expect(unwrapped).toBe(HealthPptMaster)
+    const unwrapped = loader.unwrapExports(BuiltHealthPptMaster) as Record<string, unknown>
+    expect(unwrapped).toBe(BuiltHealthPptMaster)
     expect(unwrapped.name).toBe('health-ppt-master')
     expect(unwrapped.inject).toEqual(['skills', 'agents'])
     expect(typeof unwrapped.apply).toBe('function')

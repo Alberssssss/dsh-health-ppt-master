@@ -22,4 +22,3 @@ export declare function matchesHealthPptMasterMessages(messages: readonly UserMe
  * @param ctx - plugin context carrying the agent event service.
  */
 export declare function registerHealthPptMasterRouter(ctx: Context): void;
-//# sourceMappingURL=router.d.ts.map

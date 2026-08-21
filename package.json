@@ -1,7 +1,7 @@
 {
   "name": "@deepseek-ai/dsh-experimental-health-ppt-master",
   "description": "Experimental DSH bundle for the health-ppt-master skill and its soft router",
-  "version": "0.1.0-rc.9",
+  "version": "0.1.0-rc.10",
   "private": true,
   "repository": {
     "type": "git",
@@ -13,8 +13,14 @@
   },
   "type": "module",
   "packageManager": "pnpm@11.7.0",
+  "bin": {
+    "dsh-health-ppt-master-doctor": "bin/doctor.js"
+  },
   "scripts": {
+    "build": "tsdown --config tsdown.prepare.config.ts && tsc --project tsconfig.build.json",
+    "prepare": "pnpm run build",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit"
   },
   "main": "lib/index.js",
@@ -34,6 +40,7 @@
   "files": [
     "lib/index.js",
     "lib/invariant.js",
+    "bin/doctor.js",
     "cordis.patch.yml",
     "lib/router-*.js",
     "assets",
@@ -65,6 +72,8 @@
     "@deepseek-ai/dsh-session": "0.1.0-rc.8",
     "@deepseek-ai/dsh-skill": "0.1.0-rc.8",
     "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "4.1.11",
+    "tsdown": "0.22.14",
     "typescript": "^6.0.3",
     "vitest": "^4.1.8"
   }

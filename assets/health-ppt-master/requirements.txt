@@ -14,7 +14,8 @@
 # 用于将 SVG 文件批量转换为 PowerPoint 演示文稿
 # Uses Office-compatible mode (PNG + SVG dual format) by default, supports all Office versions.
 # 默认使用 Office 兼容模式（PNG + SVG 双格式），支持所有 Office 版本
-python-pptx>=0.6.21
+python-pptx>=1.0.2
+PyYAML>=6.0.0
 
 # Recorded narration / 录制计时和旁白
 # notes_to_audio.py generates per-slide narration audio on macOS/Linux/Windows.
@@ -31,8 +32,8 @@ edge-tts>=7.2.8
 #   macOS: brew install cairo
 #
 # Option B / 方案 B: svglib (lightweight / 轻量, ~5MB, some gradients may be lost)
-svglib>=1.5.0
-reportlab>=4.0.0
+svglib>=1.5.1,<1.6
+reportlab>=4.0.0,<5
 
 # ─────────────────────────────────────────────────────────────
 # PDF to Markdown tool / PDF 转 Markdown 工具 (skills/ppt-master/scripts/source_to_md/pdf_to_md.py)
@@ -109,3 +110,7 @@ google-genai>=1.0.0
 # Localhost web editor for annotating SVG elements with edit instructions.
 # 本地 Web 编辑器，用于在 SVG 元素上添加编辑标注指令
 flask>=3.0.0
+
+# Browser-faithful visual review. The Python package does not contain a browser;
+# install Chromium separately with: python3 -m playwright install chromium
+playwright>=1.49.0
