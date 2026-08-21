@@ -8,15 +8,15 @@ Bundle 是部署单元，不是完整应用上下文；本试点证明安装与�
 
 ## 安装与生命周期
 
-把带标签的预构建组合包安装到 Web profile：
+通过 HTTPS 把带标签的预构建组合包安装到 Web profile：
 
 ```sh
-dsh plugin --profile web add github:Alberssssss/dsh-health-ppt-master#v0.1.0-rc.8
+dsh plugin --profile web add --fetch-timeout=300000 https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/refs/tags/v0.1.0-rc.9
 ```
 
 如果从 dsh 源码 checkout 运行，请用 `pnpm dsh` 替代 `dsh`。安装后重启正在运行的 Web 应用，再用 `dsh --profile web --dump-config` 验证配置层。
 
-本仓库提交运行所需的 `lib/` 文件，并且没有定义 package lifecycle script。通过 GitHub 安装时不构建本包，也不会要求 pnpm 执行本包自有的安装代码。
+固定标签的 GitHub 归档使用 HTTPS；显式设置五分钟下载超时后，慢速链路无需依赖 Git 或 SSH 传输也能完成。本仓库提交运行所需的 `lib/` 文件，并且没有定义安装生命周期脚本。通过 GitHub 安装时不构建本包，也不会要求 pnpm 执行本包自有的安装代码。
 
 如果要保留安装但同时停止提供方和 router，请把以下覆盖项加入 profile 的 `cordis.patch.yml`：
 
@@ -32,6 +32,20 @@ dsh plugin --profile web remove @deepseek-ai/dsh-experimental-health-ppt-master
 ```
 
 该插件不拥有持久状态。Cordis dispose（资源释放）会移除提供方注册与 router 监听器；项目产物保留在用户选择的 workspace 中，不属于包状态。
+
+## 源码与验证
+
+仓库在安装时使用的预构建 `lib/` 之外，同时保留可审计的 TypeScript 源码、测试和 `tsconfig.json`。源码发生变化时，发布前必须同步更新并验证对应的预构建文件。
+
+使用 Node 22.19 或更高版本以及 pnpm 11 运行独立源码检查：
+
+```sh
+pnpm install --frozen-lockfile
+pnpm typecheck
+pnpm test
+```
+
+测试覆盖提供方注册与释放、路由正反例、真实用户消息过滤、waterfall 拒绝与中止行为、Loader 导出处理以及该包自有的会话 invariant。
 
 ## 试点 profile 隔离
 

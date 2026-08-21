@@ -8,15 +8,15 @@ A bundle is a deployment unit, not a complete application context. This pilot pr
 
 ## Installation and lifecycle
 
-Install the tagged, prebuilt bundle into the Web profile:
+Install the tagged, prebuilt bundle into the Web profile over HTTPS:
 
 ```sh
-dsh plugin --profile web add github:Alberssssss/dsh-health-ppt-master#v0.1.0-rc.8
+dsh plugin --profile web add --fetch-timeout=300000 https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/refs/tags/v0.1.0-rc.9
 ```
 
 When running dsh from a source checkout, use `pnpm dsh` in place of `dsh`. Restart a running Web app after installation, then verify the layer with `dsh --profile web --dump-config`.
 
-This repository commits the runtime `lib/` files and defines no package lifecycle scripts. GitHub installation does not build the package or ask pnpm to execute package-owned installation code.
+The fixed-tag GitHub archive uses HTTPS and the explicit five-minute fetch timeout accommodates slow links without relying on Git or SSH transport. This repository commits the runtime `lib/` files and defines no install lifecycle scripts. GitHub installation does not build the package or ask pnpm to execute package-owned installation code.
 
 To stop both the provider and router without uninstalling the package, add this override to the profile's `cordis.patch.yml`:
 
@@ -32,6 +32,20 @@ dsh plugin --profile web remove @deepseek-ai/dsh-experimental-health-ppt-master
 ```
 
 The plugin owns no persistent state. Cordis disposal removes the provider registration and router listener; project output remains in the user-selected workspace and is not package state.
+
+## Source and validation
+
+The repository keeps the auditable TypeScript source, tests, and `tsconfig.json` beside the prebuilt `lib/` used at installation time. A source change must update and validate the corresponding prebuilt files before release.
+
+Run the standalone source checks with Node 22.19 or later and pnpm 11:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm typecheck
+pnpm test
+```
+
+The tests exercise provider registration and disposal, positive and negative routing, authentic-message filtering, waterfall rejection and abort behavior, Loader export handling, and the package-owned session invariant.
 
 ## Trial profile isolation
 
