@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+    <!-- 背景 -->
+    <rect width="1280" height="720" fill="#FFFFFF" />
+
+    <!-- 顶部细装饰：navy 细条 + teal 数据节点 -->
+    <rect x="0" y="0" width="1280" height="8" fill="#1A3A5C" />
+    <rect x="0" y="0" width="220" height="8" fill="#0E8C8C" />
+
+    <!-- 右上角 Logo 占位 -->
+    <text x="1240" y="60" text-anchor="end" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16" font-weight="bold">
+        {{LOGO}}
+    </text>
+
+    <!-- 主标题 -->
+    <text x="640" y="300" text-anchor="middle" fill="#1A3A5C" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="50" font-weight="bold">
+        {{TITLE}}
+    </text>
+
+    <!-- 副标题 -->
+    <text x="640" y="358" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="24">
+        {{SUBTITLE}}
+    </text>
+
+    <!-- 装饰分割线 + 数据节点 -->
+    <line x1="470" y1="400" x2="810" y2="400" stroke="#1A3A5C" stroke-width="1.5" />
+    <circle cx="640" cy="400" r="6" fill="#0E8C8C" />
+    <circle cx="540" cy="400" r="4" fill="#0E8C8C" fill-opacity="0.6" />
+    <circle cx="740" cy="400" r="4" fill="#0E8C8C" fill-opacity="0.6" />
+
+    <!-- 作者 / 单位 / 会议信息 -->
+    <text x="640" y="468" text-anchor="middle" fill="#1F2937" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="22" font-weight="bold">
+        {{AUTHOR}}
+    </text>
+    <text x="640" y="504" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="18">
+        {{DEPARTMENT}}　｜　{{INSTITUTION}}
+    </text>
+    <text x="640" y="540" text-anchor="middle" fill="#0E8C8C" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">
+        {{SUBTITLE}}
+    </text>
+
+    <!-- 底部信息 -->
+    <rect x="0" y="672" width="1280" height="48" fill="#F4F7F9" />
+    <text x="640" y="702" text-anchor="middle" fill="#9AA7B2" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{DATE}}
+    </text>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 页眉 -->
+  <rect x="0" y="0" width="1280" height="70" fill="#1F8A5B"/>
+  <rect x="0" y="0" width="6" height="70" fill="#E8A33D"/>
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26"
+    font-weight="bold">{{SECTION_NUM}} {{PAGE_TITLE}}</text>
+  <g id="emblem" transform="translate(1198,21)">
+    <rect width="28" height="28" rx="7" fill="#FFFFFF" fill-opacity="0.18"/>
+    <rect x="12" y="6" width="4" height="16" rx="2" fill="#FFFFFF"/>
+    <rect x="6" y="12" width="16" height="4" rx="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 学习目标 / 要点条 -->
+  <rect x="0" y="70" width="1280" height="50" fill="#FBF1DD"/>
+  <rect x="0" y="70" width="6" height="50" fill="#E8A33D"/>
+  <text x="40" y="102" fill="#15633F" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">{{KEY_MESSAGE}}</text>
+
+  <!-- 内容区域：分节讲授 要点/图示/案例/小结 -->
+  <rect x="40" y="135" width="1200" height="515" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="135" width="1200" height="515" fill="none" stroke="#D6E5DC" stroke-width="1" rx="4"
+    stroke-dasharray="8,4"/>
+  <text x="640" y="380" text-anchor="middle" fill="#C2D6CA" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{CONTENT_AREA}}</text>
+  <text x="640" y="410" text-anchor="middle" fill="#C2D6CA" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">建议布局：要点列表、流程/框架图、案例、小结卡、思考题</text>
+
+  <!-- 页脚 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#D6E5DC" stroke-width="1"/>
+  <text x="40" y="695" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">来源：{{SOURCE}}</text>
+  <text x="640" y="695" text-anchor="middle" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="12">{{SECTION_NAME}}</text>
+  <text x="1220" y="695" text-anchor="end" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{PAGE_NUM}}</text>
+</svg>

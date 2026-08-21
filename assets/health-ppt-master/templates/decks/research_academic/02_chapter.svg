@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="ra_chapter_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11293F"/>
+      <stop offset="100%" stop-color="#0B1F30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景：深 navy 渐变 -->
+  <rect width="1280" height="720" fill="url(#ra_chapter_bg)"/>
+
+  <!-- 右侧几何装饰 -->
+  <polygon points="880,0 1280,0 1280,720 680,720" fill="#1A3A5C" fill-opacity="0.5"/>
+
+  <!-- 右侧数据节点矩阵装饰 -->
+  <circle cx="1120" cy="250" r="6" fill="#0E8C8C" fill-opacity="0.5"/>
+  <circle cx="1170" cy="250" r="6" fill="#0E8C8C" fill-opacity="0.3"/>
+  <circle cx="1120" cy="300" r="6" fill="#0E8C8C" fill-opacity="0.3"/>
+  <circle cx="1170" cy="300" r="6" fill="#0E8C8C" fill-opacity="0.5"/>
+  <line x1="1120" y1="250" x2="1170" y2="300" stroke="#0E8C8C" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="1170" y1="250" x2="1120" y2="300" stroke="#0E8C8C" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- 左侧 teal 装饰条 -->
+  <rect x="0" y="260" width="10" height="200" fill="#0E8C8C"/>
+
+  <!-- 章节编号：大号半透明 -->
+  <text x="110" y="490" fill="#FFFFFF" fill-opacity="0.07" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="280" font-weight="bold">{{CHAPTER_NUM}}</text>
+
+  <!-- teal 装饰线 -->
+  <line x1="380" y1="278" x2="520" y2="278" stroke="#0E8C8C" stroke-width="5"/>
+  <circle cx="532" cy="278" r="6" fill="#0E8C8C"/>
+
+  <!-- 章节标题 -->
+  <text x="380" y="362" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="52"
+    font-weight="bold">{{CHAPTER_TITLE}}</text>
+
+  <!-- 章节描述 -->
+  <text x="380" y="422" fill="#C9D6E2" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22">{{CHAPTER_DESC}}</text>
+
+  <!-- 底部信息 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"/>
+  <text x="1240" y="690" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4"
+    font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">{{INSTITUTION}}</text>
+</svg>

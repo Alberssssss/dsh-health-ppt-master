@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 页眉 -->
+  <rect x="0" y="0" width="1280" height="70" fill="#13315C"/>
+  <rect x="0" y="0" width="6" height="70" fill="#B5121B"/>
+  <rect x="0" y="70" width="1280" height="2" fill="#B8902F" fill-opacity="0.5"/>
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28"
+    font-weight="bold">目 录</text>
+  <text x="132" y="46" fill="#FFFFFF" fill-opacity="0.7" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">CONTENTS</text>
+  <g id="emblem" transform="translate(1198,21)">
+    <rect width="28" height="28" rx="7" fill="#FFFFFF" fill-opacity="0.18"/>
+    <rect x="12" y="6" width="4" height="16" rx="2" fill="#FFFFFF"/>
+    <rect x="6" y="12" width="16" height="4" rx="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 目录项 01 -->
+  <rect x="80" y="120" width="540" height="95" fill="#EAEEF4" rx="8"/>
+  <rect x="80" y="120" width="6" height="95" fill="#13315C" rx="3"/>
+  <text x="120" y="170" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">01</text>
+  <text x="190" y="163" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_1_TITLE}}</text>
+  <text x="190" y="197" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_1_DESC}}</text>
+
+  <!-- 目录项 02 -->
+  <rect x="660" y="120" width="540" height="95" fill="#EAEEF4" rx="8"/>
+  <rect x="660" y="120" width="6" height="95" fill="#13315C" rx="3"/>
+  <text x="700" y="170" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">02</text>
+  <text x="770" y="163" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_2_TITLE}}</text>
+  <text x="770" y="197" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_2_DESC}}</text>
+
+  <!-- 目录项 03 -->
+  <rect x="80" y="240" width="540" height="95" fill="#EAEEF4" rx="8"/>
+  <rect x="80" y="240" width="6" height="95" fill="#B5121B" rx="3"/>
+  <text x="120" y="290" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">03</text>
+  <text x="190" y="283" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_3_TITLE}}</text>
+  <text x="190" y="317" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_3_DESC}}</text>
+
+  <!-- 目录项 04 -->
+  <rect x="660" y="240" width="540" height="95" fill="#EAEEF4" rx="8"/>
+  <rect x="660" y="240" width="6" height="95" fill="#B5121B" rx="3"/>
+  <text x="700" y="290" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">04</text>
+  <text x="770" y="283" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_4_TITLE}}</text>
+  <text x="770" y="317" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_4_DESC}}</text>
+
+  <!-- 目录项 05（可选） -->
+  <rect x="80" y="360" width="540" height="90" fill="none" stroke="#D3DAE4" stroke-width="1"
+    stroke-dasharray="4,4" rx="8"/>
+  <text x="350" y="410" text-anchor="middle" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{TOC_ITEM_5_TITLE}}</text>
+
+  <!-- 目录项 06（可选） -->
+  <rect x="660" y="360" width="540" height="90" fill="none" stroke="#D3DAE4" stroke-width="1"
+    stroke-dasharray="4,4" rx="8"/>
+  <text x="930" y="410" text-anchor="middle" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{TOC_ITEM_6_TITLE}}</text>
+
+  <!-- 页脚 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#D3DAE4" stroke-width="1"/>
+  <text x="40" y="695" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">{{INSTITUTION}}</text>
+  <text x="1220" y="695" text-anchor="end" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{PAGE_NUM}}</text>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+    <!-- 背景 -->
+    <rect width="1280" height="720" fill="#FFFFFF" />
+
+    <!-- 顶部正式装饰：深蓝带 + 红竖条 + 双线 -->
+    <rect x="0" y="0" width="1280" height="14" fill="#13315C" />
+    <rect x="0" y="0" width="8" height="14" fill="#B5121B" />
+    <line x1="0" y1="20" x2="1280" y2="20" stroke="#B5121B" stroke-width="1.5" />
+
+    <!-- 右上角机构/Logo 占位 -->
+    <rect x="1060" y="44" width="180" height="44" fill="none" stroke="#D5DCE6" stroke-width="1" rx="4" />
+    <text x="1150" y="72" text-anchor="middle" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="15" font-weight="bold">
+        {{LOGO}}
+    </text>
+
+    <!-- 主标题 -->
+    <text x="640" y="298" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="48" font-weight="bold">
+        {{TITLE}}
+    </text>
+
+    <!-- 副标题 -->
+    <text x="640" y="356" text-anchor="middle" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="24">
+        {{SUBTITLE}}
+    </text>
+
+    <!-- 装饰分割线（双色） -->
+    <line x1="440" y1="398" x2="840" y2="398" stroke="#13315C" stroke-width="2" />
+    <rect x="624" y="394" width="32" height="8" fill="#B5121B" />
+
+    <!-- 申请人 / 类别 / 单位信息 -->
+    <text x="640" y="466" text-anchor="middle" fill="#1F2933" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="22" font-weight="bold">
+        {{AUTHOR}}
+    </text>
+    <text x="640" y="502" text-anchor="middle" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="18">
+        {{DEPARTMENT}}　｜　{{INSTITUTION}}
+    </text>
+    <text x="640" y="538" text-anchor="middle" fill="#B5121B" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16" font-weight="bold">
+        {{SUBTITLE}}
+    </text>
+
+    <!-- 底部信息带 -->
+    <rect x="0" y="666" width="1280" height="54" fill="#F2F4F8" />
+    <rect x="0" y="666" width="1280" height="3" fill="#13315C" />
+    <text x="640" y="700" text-anchor="middle" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{DATE}}
+    </text>
+</svg>

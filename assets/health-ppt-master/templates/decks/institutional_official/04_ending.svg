@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部双线（蓝 + 绛红 + 金） -->
+  <rect x="0" y="0" width="1280" height="12" fill="#13315C"/>
+  <rect x="0" y="12" width="1280" height="3" fill="#B5121B"/>
+  <rect x="0" y="15" width="1280" height="1.5" fill="#B8902F"/>
+
+  <!-- 通用医疗徽标（十字 + 印章环，居中，较大） -->
+  <circle cx="640" cy="190" r="58" fill="none" stroke="#B5121B" stroke-width="2" stroke-opacity="0.5"/>
+  <g id="emblem" transform="translate(600,150)">
+    <rect width="80" height="80" rx="18" fill="#13315C"/>
+    <rect x="35" y="16" width="10" height="48" rx="5" fill="#FFFFFF"/>
+    <rect x="16" y="35" width="48" height="10" rx="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 感谢语 -->
+  <text x="640" y="318" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="48" font-weight="bold">{{THANK_YOU}}</text>
+
+  <!-- 副标语 -->
+  <text x="640" y="366" text-anchor="middle" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22">{{ENDING_SUBTITLE}}</text>
+
+  <!-- crimson 装饰分隔线 -->
+  <line x1="500" y1="406" x2="780" y2="406" stroke="#13315C" stroke-width="1.5"/>
+  <rect x="600" y="403" width="80" height="5" fill="#B5121B"/>
+
+  <!-- 单位 / 合规声明卡 -->
+  <rect x="340" y="438" width="600" height="150" fill="#EAEEF4" rx="8"/>
+  <rect x="340" y="438" width="6" height="150" fill="#B5121B" rx="3"/>
+  <text x="640" y="488" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="20" font-weight="bold">{{INSTITUTION}}</text>
+  <text x="640" y="526" text-anchor="middle" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{DEPARTMENT}}</text>
+  <text x="640" y="561" text-anchor="middle" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{CONTACT_INFO}}</text>
+
+  <!-- 页脚 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F3F5F9"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="13">数据可溯源 · 如实陈述　｜　{{PAGE_NUM}}</text>
+</svg>

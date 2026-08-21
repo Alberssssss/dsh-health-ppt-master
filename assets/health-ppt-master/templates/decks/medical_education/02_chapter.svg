@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="me_chapter_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15633F"/>
+      <stop offset="100%" stop-color="#0F4A30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景：深绿渐变 -->
+  <rect width="1280" height="720" fill="url(#me_chapter_bg)"/>
+
+  <!-- 右侧几何装饰 -->
+  <polygon points="900,0 1280,0 1280,720 720,720" fill="#1F8A5B" fill-opacity="0.35"/>
+
+  <!-- 左侧 amber 装饰条 -->
+  <rect x="0" y="260" width="10" height="200" fill="#E8A33D"/>
+
+  <!-- 章节编号：大号半透明 -->
+  <text x="110" y="500" fill="#FFFFFF" fill-opacity="0.07" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="300" font-weight="bold">{{CHAPTER_NUM}}</text>
+
+  <!-- amber 装饰线 -->
+  <line x1="380" y1="278" x2="520" y2="278" stroke="#E8A33D" stroke-width="5"/>
+  <circle cx="532" cy="278" r="6" fill="#E8A33D"/>
+
+  <!-- 章节标题 -->
+  <text x="380" y="362" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="52"
+    font-weight="bold">{{CHAPTER_TITLE}}</text>
+
+  <!-- 章节描述 -->
+  <text x="380" y="422" fill="#CDE6D8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22">{{CHAPTER_DESC}}</text>
+
+  <!-- step 路径点装饰 -->
+  <circle cx="1060" cy="600" r="6" fill="#E8A33D" fill-opacity="0.6"/>
+  <circle cx="1110" cy="600" r="6" fill="#FFFFFF" fill-opacity="0.35"/>
+  <circle cx="1160" cy="600" r="6" fill="#FFFFFF" fill-opacity="0.2"/>
+  <line x1="1060" y1="600" x2="1160" y2="600" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.2"/>
+
+  <!-- 底部信息 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"/>
+  <text x="1240" y="690" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4"
+    font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">{{INSTITUTION}}</text>
+</svg>

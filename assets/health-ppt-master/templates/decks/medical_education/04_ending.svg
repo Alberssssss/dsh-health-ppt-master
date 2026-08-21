@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部色带 -->
+  <rect x="0" y="0" width="1280" height="10" fill="#1F8A5B"/>
+  <rect x="0" y="0" width="240" height="10" fill="#E8A33D"/>
+
+  <!-- 通用医疗徽标（居中，较大） -->
+  <g id="emblem" transform="translate(600,150)">
+    <rect width="80" height="80" rx="18" fill="#1F8A5B"/>
+    <rect x="35" y="16" width="10" height="48" rx="5" fill="#FFFFFF"/>
+    <rect x="16" y="35" width="48" height="10" rx="5" fill="#FFFFFF"/>
+    <rect x="58" y="58" width="16" height="5" rx="2.5" fill="#E8A33D"/>
+  </g>
+
+  <!-- 感谢语 -->
+  <text x="640" y="312" text-anchor="middle" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="50" font-weight="bold">{{THANK_YOU}}</text>
+
+  <!-- 副标语 / take-home -->
+  <text x="640" y="362" text-anchor="middle" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22">{{ENDING_SUBTITLE}}</text>
+
+  <!-- amber 装饰分隔线 -->
+  <line x1="500" y1="402" x2="780" y2="402" stroke="#E8A33D" stroke-width="2.5"/>
+  <circle cx="640" cy="402" r="6" fill="#E8A33D"/>
+
+  <!-- 小结 / 自测 / 单位卡 -->
+  <rect x="340" y="438" width="600" height="150" fill="#EAF5EF" rx="8"/>
+  <rect x="340" y="438" width="6" height="150" fill="#E8A33D" rx="3"/>
+  <text x="640" y="488" text-anchor="middle" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="20" font-weight="bold">{{INSTITUTION}}</text>
+  <text x="640" y="526" text-anchor="middle" fill="#1E2A24" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{DEPARTMENT}}</text>
+  <text x="640" y="561" text-anchor="middle" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{CONTACT_INFO}}</text>
+
+  <!-- 页脚 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F3F8F5"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="13">课后自测 · 互动答疑　｜　{{PAGE_NUM}}</text>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 页眉 -->
+  <rect x="0" y="0" width="1280" height="70" fill="#13315C"/>
+  <rect x="0" y="0" width="6" height="70" fill="#B5121B"/>
+  <rect x="0" y="70" width="1280" height="2" fill="#B8902F" fill-opacity="0.5"/>
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26"
+    font-weight="bold">{{SECTION_NUM}} {{PAGE_TITLE}}</text>
+  <g id="emblem" transform="translate(1198,21)">
+    <rect width="28" height="28" rx="7" fill="#FFFFFF" fill-opacity="0.18"/>
+    <rect x="12" y="6" width="4" height="16" rx="2" fill="#FFFFFF"/>
+    <rect x="6" y="12" width="16" height="4" rx="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 结论 / 核心结论条 -->
+  <rect x="0" y="72" width="1280" height="50" fill="#EEF1F6"/>
+  <rect x="0" y="72" width="6" height="50" fill="#B5121B"/>
+  <text x="40" y="104" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">{{KEY_MESSAGE}}</text>
+
+  <!-- 内容区域：指标卡 / 对标表 / 技术路线 / gantt -->
+  <rect x="40" y="137" width="1200" height="513" fill="#FFFFFF" rx="4"/>
+  <rect x="40" y="137" width="1200" height="513" fill="none" stroke="#D3DAE4" stroke-width="1" rx="4"
+    stroke-dasharray="8,4"/>
+  <text x="640" y="382" text-anchor="middle" fill="#C2CAD6" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{CONTENT_AREA}}</text>
+  <text x="640" y="412" text-anchor="middle" fill="#C2CAD6" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">建议布局：KPI 指标卡、对标表、技术路线流程图、进度 gantt、前期数据图</text>
+
+  <!-- 页脚 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#D3DAE4" stroke-width="1"/>
+  <text x="40" y="695" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">来源：{{SOURCE}}</text>
+  <text x="640" y="695" text-anchor="middle" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="12">{{SECTION_NAME}}</text>
+  <text x="1220" y="695" text-anchor="end" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{PAGE_NUM}}</text>
+</svg>

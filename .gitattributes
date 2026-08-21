@@ -1,0 +1,2 @@
+# Bundled runtime assets are imported byte-for-byte from the validated package.
+assets/** -whitespace

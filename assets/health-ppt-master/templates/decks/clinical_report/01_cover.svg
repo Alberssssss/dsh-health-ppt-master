@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="cr_cover_band" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#004C87"/>
+      <stop offset="100%" stop-color="#0066B3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部色带 -->
+  <rect x="0" y="0" width="1280" height="10" fill="url(#cr_cover_band)"/>
+  <rect x="0" y="0" width="240" height="10" fill="#00A86B"/>
+
+  <!-- 左下柔和斜切色块 -->
+  <polygon points="0,560 520,720 0,720" fill="#0066B3" fill-opacity="0.06"/>
+  <polygon points="0,632 340,720 0,720" fill="#00A86B" fill-opacity="0.07"/>
+
+  <!-- 右上装饰几何 -->
+  <line x1="1110" y1="70" x2="1240" y2="70" stroke="#0066B3" stroke-width="1" stroke-opacity="0.25"/>
+  <line x1="1150" y1="98" x2="1240" y2="98" stroke="#00A86B" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="1240" cy="70" r="3" fill="#0066B3" fill-opacity="0.3"/>
+  <circle cx="1240" cy="98" r="3" fill="#00A86B" fill-opacity="0.4"/>
+
+  <!-- 通用医疗徽标（十字，占位标识，可替换为本院 logo） -->
+  <g id="emblem" transform="translate(610,150)">
+    <rect width="60" height="60" rx="14" fill="#0066B3"/>
+    <rect x="26" y="12" width="8" height="36" rx="4" fill="#FFFFFF"/>
+    <rect x="12" y="26" width="36" height="8" rx="4" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 主标题 -->
+  <text x="640" y="312" text-anchor="middle" fill="#0066B3" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif"
+    font-size="50" font-weight="bold">{{TITLE}}</text>
+
+  <!-- 副标题 -->
+  <text x="640" y="366" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="24">{{SUBTITLE}}</text>
+
+  <!-- 心电/脉搏装饰线 -->
+  <path d="M500 410 H598 L614 384 L640 436 L662 398 L678 410 H780" fill="none" stroke="#00A86B"
+    stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="500" cy="410" r="4" fill="#0066B3"/>
+  <circle cx="780" cy="410" r="4" fill="#0066B3"/>
+
+  <!-- 汇报人 / 科室 / 医院 -->
+  <text x="640" y="480" text-anchor="middle" fill="#1F2A37" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22" font-weight="bold">{{AUTHOR}}</text>
+  <text x="640" y="516" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="18">{{DEPARTMENT}}　｜　{{INSTITUTION}}</text>
+
+  <!-- 底部信息 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F4F8FC"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AA7B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{DATE}}</text>
+</svg>

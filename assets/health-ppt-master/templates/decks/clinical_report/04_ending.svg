@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部色带 -->
+  <rect x="0" y="0" width="1280" height="10" fill="#0066B3"/>
+  <rect x="0" y="0" width="240" height="10" fill="#00A86B"/>
+
+  <!-- 通用医疗徽标（居中，较大） -->
+  <g id="emblem" transform="translate(600,150)">
+    <rect width="80" height="80" rx="18" fill="#0066B3"/>
+    <rect x="35" y="16" width="10" height="48" rx="5" fill="#FFFFFF"/>
+    <rect x="16" y="35" width="48" height="10" rx="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 感谢语 -->
+  <text x="640" y="312" text-anchor="middle" fill="#0066B3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="50" font-weight="bold">{{THANK_YOU}}</text>
+
+  <!-- 副标语 / take-home -->
+  <text x="640" y="362" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22">{{ENDING_SUBTITLE}}</text>
+
+  <!-- 心电装饰线 -->
+  <path d="M500 402 H598 L614 378 L640 428 L662 392 L678 402 H780" fill="none" stroke="#00A86B"
+    stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- 单位 / 致谢卡 -->
+  <rect x="340" y="438" width="600" height="150" fill="#EAF3FB" rx="8"/>
+  <rect x="340" y="438" width="6" height="150" fill="#00A86B" rx="3"/>
+  <text x="640" y="488" text-anchor="middle" fill="#0066B3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="20" font-weight="bold">{{INSTITUTION}}</text>
+  <text x="640" y="526" text-anchor="middle" fill="#1F2A37" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{DEPARTMENT}}</text>
+  <text x="640" y="561" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{CONTACT_INFO}}</text>
+
+  <!-- 页脚 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F4F8FC"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AA7B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="13">病例已去标识化 · 仅供学术讨论　｜　{{PAGE_NUM}}</text>
+</svg>

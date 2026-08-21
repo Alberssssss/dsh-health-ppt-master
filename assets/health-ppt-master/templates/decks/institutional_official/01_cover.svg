@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="io_cover_band" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0C2342"/>
+      <stop offset="100%" stop-color="#13315C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部双线（蓝 + 绛红 + 金，权威感） -->
+  <rect x="0" y="0" width="1280" height="12" fill="url(#io_cover_band)"/>
+  <rect x="0" y="12" width="1280" height="3" fill="#B5121B"/>
+  <rect x="0" y="15" width="1280" height="1.5" fill="#B8902F"/>
+
+  <!-- 左下柔和斜切色块 -->
+  <polygon points="0,575 480,720 0,720" fill="#13315C" fill-opacity="0.05"/>
+
+  <!-- 右上装饰几何 -->
+  <line x1="1110" y1="80" x2="1240" y2="80" stroke="#13315C" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="1150" y1="106" x2="1240" y2="106" stroke="#B5121B" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="1240" cy="80" r="3" fill="#13315C" fill-opacity="0.3"/>
+  <circle cx="1240" cy="106" r="3" fill="#B5121B" fill-opacity="0.4"/>
+
+  <!-- 通用医疗徽标（十字 + 印章环，占位标识，可替换为本院 logo） -->
+  <circle cx="640" cy="182" r="46" fill="none" stroke="#B5121B" stroke-width="2" stroke-opacity="0.5"/>
+  <g id="emblem" transform="translate(610,152)">
+    <rect width="60" height="60" rx="14" fill="#13315C"/>
+    <rect x="26" y="12" width="8" height="36" rx="4" fill="#FFFFFF"/>
+    <rect x="12" y="26" width="36" height="8" rx="4" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 主标题 -->
+  <text x="640" y="320" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif"
+    font-size="48" font-weight="bold">{{TITLE}}</text>
+
+  <!-- 副标题 -->
+  <text x="640" y="372" text-anchor="middle" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="24">{{SUBTITLE}}</text>
+
+  <!-- crimson + 金 装饰分隔线 -->
+  <line x1="500" y1="412" x2="780" y2="412" stroke="#13315C" stroke-width="1.5"/>
+  <rect x="600" y="409" width="80" height="5" fill="#B5121B"/>
+  <circle cx="500" cy="412" r="4" fill="#B8902F"/>
+  <circle cx="780" cy="412" r="4" fill="#B8902F"/>
+
+  <!-- 申报人 / 单位 / 类别 -->
+  <text x="640" y="484" text-anchor="middle" fill="#1F2733" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22" font-weight="bold">{{AUTHOR}}</text>
+  <text x="640" y="520" text-anchor="middle" fill="#5A6675" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="18">{{DEPARTMENT}}　｜　{{INSTITUTION}}</text>
+
+  <!-- 底部信息 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F3F5F9"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AA4B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{DATE}}</text>
+</svg>

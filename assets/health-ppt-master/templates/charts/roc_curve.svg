@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <!--
+    ROC Curve Template
+    Usage: diagnostic / prognostic model discrimination (sensitivity vs 1 − specificity)
+    Scenarios: diagnostic test evaluation, biomarker/model performance, grant pre-data
+    Adapt: replace curve points with real (1−specificity, sensitivity) pairs; update AUC, operating point
+    -->
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FFFFFF"/>
+    <!-- Title -->
+    <text x="60" y="74" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" font-weight="bold" fill="#1A3A5C">Receiver Operating Characteristic (ROC)</text>
+    <text x="60" y="108" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="600" fill="#5A6B7B" letter-spacing="1">SENSITIVITY VS 1 − SPECIFICITY · DIAGONAL = CHANCE</text>
+
+    <g id="grid">
+        <line x1="312" y1="150" x2="312" y2="610" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="404" y1="150" x2="404" y2="610" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="496" y1="150" x2="496" y2="610" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="588" y1="150" x2="588" y2="610" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="220" y1="518" x2="680" y2="518" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="220" y1="426" x2="680" y2="426" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="220" y1="334" x2="680" y2="334" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="220" y1="242" x2="680" y2="242" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+    </g>
+
+    <g id="axes">
+        <line x1="220" y1="150" x2="220" y2="610" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="220" y1="610" x2="680" y2="610" stroke="#CBD5E1" stroke-width="2"/>
+        <!-- Y ticks -->
+        <text x="206" y="615" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">0.0</text>
+        <text x="206" y="523" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">0.2</text>
+        <text x="206" y="431" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">0.4</text>
+        <text x="206" y="339" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">0.6</text>
+        <text x="206" y="247" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">0.8</text>
+        <text x="206" y="155" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="end">1.0</text>
+        <!-- X ticks -->
+        <text x="220" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">0.0</text>
+        <text x="312" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">0.2</text>
+        <text x="404" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">0.4</text>
+        <text x="496" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">0.6</text>
+        <text x="588" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">0.8</text>
+        <text x="680" y="636" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">1.0</text>
+        <!-- Axis titles -->
+        <text x="450" y="668" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#5A6B7B" text-anchor="middle">1 − Specificity (False Positive Rate)</text>
+        <text x="150" y="380" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#5A6B7B" text-anchor="middle" transform="rotate(-90 150 380)">Sensitivity (True Positive Rate)</text>
+    </g>
+
+    <g id="reference">
+        <!-- Chance diagonal -->
+        <line x1="220" y1="610" x2="680" y2="150" stroke="#9AA7B2" stroke-width="2" stroke-dasharray="6,5"/>
+    </g>
+
+    <g id="rocCurve">
+        <!-- Shaded area under curve -->
+        <path d="M 220,610 243,403 266,325 312,251 358,214 450,182 542,164 680,150 680,610 Z" fill="#0E8C8C" fill-opacity="0.10"/>
+        <!-- ROC line -->
+        <polyline points="220,610 243,403 266,325 312,251 358,214 450,182 542,164 680,150"
+                  fill="none" stroke="#0E8C8C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Operating point -->
+        <circle cx="312" cy="251" r="8" fill="#B5121B" stroke="#FFFFFF" stroke-width="2.5"/>
+        <text x="328" y="246" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#B5121B">Optimal cutoff {{CUTOFF}}</text>
+    </g>
+
+    <g id="aucCard">
+        <rect x="820" y="180" width="360" height="200" fill="#E3F1F1" rx="10"/>
+        <rect x="820" y="180" width="6" height="200" fill="#0E8C8C" rx="3"/>
+        <text x="848" y="226" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700" fill="#1A3A5C">Model Performance</text>
+        <text x="848" y="276" font-family="Arial, sans-serif" font-size="44" font-weight="800" fill="#0E8C8C">AUC {{AUC}}</text>
+        <text x="848" y="312" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#5A6B7B">95% CI {{AUC_CI}}</text>
+        <text x="848" y="344" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#5A6B7B">Sensitivity {{SENS}} · Specificity {{SPEC}}</text>
+    </g>
+
+    <!-- Source Footer -->
+    <text x="60" y="700" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">Source: {{SOURCE}}</text>
+</svg>

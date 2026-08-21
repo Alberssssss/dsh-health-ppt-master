@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 页眉 -->
+  <rect x="0" y="0" width="1280" height="70" fill="#1F8A5B"/>
+  <rect x="0" y="0" width="6" height="70" fill="#E8A33D"/>
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28"
+    font-weight="bold">课程大纲</text>
+  <text x="172" y="46" fill="#FFFFFF" fill-opacity="0.7" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">OUTLINE</text>
+  <g id="emblem" transform="translate(1198,21)">
+    <rect width="28" height="28" rx="7" fill="#FFFFFF" fill-opacity="0.18"/>
+    <rect x="12" y="6" width="4" height="16" rx="2" fill="#FFFFFF"/>
+    <rect x="6" y="12" width="16" height="4" rx="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 学习步骤 01 -->
+  <rect x="80" y="115" width="540" height="95" fill="#EAF5EF" rx="8"/>
+  <rect x="80" y="115" width="6" height="95" fill="#1F8A5B" rx="3"/>
+  <text x="120" y="165" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">01</text>
+  <text x="190" y="158" fill="#1E2A24" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_1_TITLE}}</text>
+  <text x="190" y="192" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_1_DESC}}</text>
+
+  <!-- 学习步骤 02 -->
+  <rect x="660" y="115" width="540" height="95" fill="#EAF5EF" rx="8"/>
+  <rect x="660" y="115" width="6" height="95" fill="#1F8A5B" rx="3"/>
+  <text x="700" y="165" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">02</text>
+  <text x="770" y="158" fill="#1E2A24" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_2_TITLE}}</text>
+  <text x="770" y="192" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_2_DESC}}</text>
+
+  <!-- 学习步骤 03 -->
+  <rect x="80" y="235" width="540" height="95" fill="#FBF1DD" rx="8"/>
+  <rect x="80" y="235" width="6" height="95" fill="#E8A33D" rx="3"/>
+  <text x="120" y="285" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">03</text>
+  <text x="190" y="278" fill="#1E2A24" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_3_TITLE}}</text>
+  <text x="190" y="312" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_3_DESC}}</text>
+
+  <!-- 学习步骤 04 -->
+  <rect x="660" y="235" width="540" height="95" fill="#FBF1DD" rx="8"/>
+  <rect x="660" y="235" width="6" height="95" fill="#E8A33D" rx="3"/>
+  <text x="700" y="285" fill="#1F8A5B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+    font-weight="bold">04</text>
+  <text x="770" y="278" fill="#1E2A24" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+    font-weight="bold">{{TOC_ITEM_4_TITLE}}</text>
+  <text x="770" y="312" fill="#5B6B62" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{TOC_ITEM_4_DESC}}</text>
+
+  <!-- 学习步骤 05（可选） -->
+  <rect x="80" y="355" width="540" height="95" fill="none" stroke="#D6E5DC" stroke-width="1"
+    stroke-dasharray="4,4" rx="8"/>
+  <text x="350" y="410" text-anchor="middle" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{TOC_ITEM_5_TITLE}}</text>
+
+  <!-- 学习步骤 06（可选） -->
+  <rect x="660" y="355" width="540" height="95" fill="none" stroke="#D6E5DC" stroke-width="1"
+    stroke-dasharray="4,4" rx="8"/>
+  <text x="930" y="410" text-anchor="middle" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="16">{{TOC_ITEM_6_TITLE}}</text>
+
+  <!-- 装饰：step 路径点 -->
+  <line x1="560" y1="540" x2="720" y2="540" stroke="#E8A33D" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="560" cy="540" r="5" fill="#1F8A5B" fill-opacity="0.5"/>
+  <circle cx="640" cy="540" r="5" fill="#E8A33D" fill-opacity="0.6"/>
+  <circle cx="720" cy="540" r="5" fill="#1F8A5B" fill-opacity="0.5"/>
+
+  <!-- 页脚 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#D6E5DC" stroke-width="1"/>
+  <text x="40" y="695" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">{{INSTITUTION}}</text>
+  <text x="1220" y="695" text-anchor="end" fill="#9AAFA3" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{PAGE_NUM}}</text>
+</svg>

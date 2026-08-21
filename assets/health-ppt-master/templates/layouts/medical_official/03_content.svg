@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+    <!-- 背景 -->
+    <rect width="1280" height="720" fill="#FFFFFF" />
+
+    <!-- 页眉（深蓝 + 红竖条 + 双线） -->
+    <rect x="0" y="0" width="1280" height="78" fill="#13315C" />
+    <rect x="0" y="0" width="6" height="78" fill="#B5121B" />
+    <line x1="0" y1="78" x2="1280" y2="78" stroke="#B5121B" stroke-width="2" />
+    <text x="40" y="50" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26"
+        font-weight="bold">
+        {{SECTION_NUM}} {{PAGE_TITLE}}
+    </text>
+    <text x="1240" y="50" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16" font-weight="bold">
+        {{LOGO}}
+    </text>
+
+    <!-- 核心论点条 -->
+    <rect x="0" y="78" width="1280" height="46" fill="#EEF1F6" />
+    <rect x="0" y="78" width="6" height="46" fill="#B5121B" />
+    <text x="40" y="108" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">
+        {{KEY_MESSAGE}}
+    </text>
+
+    <!-- 内容区域：高密度结构化（卡片/表格/技术路线/甘特） -->
+    <!-- 可用空间: x=40, y=135, width=1200, height=515 -->
+    <rect x="40" y="135" width="1200" height="515" fill="#FFFFFF" rx="4" />
+    <rect x="40" y="135" width="1200" height="515" fill="none" stroke="#D5DCE6" stroke-width="1" rx="4"
+        stroke-dasharray="8,4" />
+    <text x="640" y="380" text-anchor="middle" fill="#C2C9D4" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">
+        {{CONTENT_AREA}}
+    </text>
+    <text x="640" y="410" text-anchor="middle" fill="#C2C9D4" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        建议布局：技术路线图、指标卡、对标表、甘特进度、编号式创新点
+    </text>
+
+    <!-- 页脚 -->
+    <line x1="40" y1="665" x2="1240" y2="665" stroke="#D5DCE6" stroke-width="1" />
+    <text x="40" y="695" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">
+        来源：{{SOURCE}}
+    </text>
+    <text x="640" y="695" text-anchor="middle" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="12">
+        {{SECTION_NAME}}
+    </text>
+    <text x="1220" y="695" text-anchor="end" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{PAGE_NUM}}
+    </text>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="io_chapter_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C2342"/>
+      <stop offset="100%" stop-color="#081A33"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景：深蓝渐变 -->
+  <rect width="1280" height="720" fill="url(#io_chapter_bg)"/>
+
+  <!-- 右侧几何装饰 -->
+  <polygon points="900,0 1280,0 1280,720 720,720" fill="#13315C" fill-opacity="0.45"/>
+
+  <!-- 左侧 crimson 装饰条 -->
+  <rect x="0" y="260" width="10" height="200" fill="#B5121B"/>
+
+  <!-- 章节编号：大号半透明 -->
+  <text x="110" y="500" fill="#FFFFFF" fill-opacity="0.06" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="300" font-weight="bold">{{CHAPTER_NUM}}</text>
+
+  <!-- crimson + 金 装饰线 -->
+  <line x1="380" y1="278" x2="500" y2="278" stroke="#B5121B" stroke-width="5"/>
+  <line x1="380" y1="288" x2="460" y2="288" stroke="#B8902F" stroke-width="2"/>
+  <circle cx="512" cy="278" r="6" fill="#B5121B"/>
+
+  <!-- 章节标题 -->
+  <text x="380" y="362" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="52"
+    font-weight="bold">{{CHAPTER_TITLE}}</text>
+
+  <!-- 章节描述 -->
+  <text x="380" y="422" fill="#C5CFDE" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22">{{CHAPTER_DESC}}</text>
+
+  <!-- 底部信息 -->
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.1"/>
+  <text x="1240" y="690" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4"
+    font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">{{INSTITUTION}}</text>
+</svg>

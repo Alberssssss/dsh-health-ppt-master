@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+    <!-- 背景 -->
+    <rect width="1280" height="720" fill="#FFFFFF" />
+
+    <!-- 顶部正式装饰 -->
+    <rect x="0" y="0" width="1280" height="14" fill="#13315C" />
+    <rect x="0" y="0" width="8" height="14" fill="#B5121B" />
+    <line x1="0" y1="20" x2="1280" y2="20" stroke="#B5121B" stroke-width="1.5" />
+
+    <text x="1240" y="62" text-anchor="end" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16" font-weight="bold">
+        {{LOGO}}
+    </text>
+
+    <!-- 结束语 -->
+    <text x="640" y="290" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="48" font-weight="bold">
+        {{THANK_YOU}}
+    </text>
+
+    <!-- 副标语 -->
+    <text x="640" y="346" text-anchor="middle" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="22">
+        {{ENDING_SUBTITLE}}
+    </text>
+
+    <!-- 装饰分割线 -->
+    <line x1="440" y1="386" x2="840" y2="386" stroke="#13315C" stroke-width="2" />
+    <rect x="624" y="382" width="32" height="8" fill="#B5121B" />
+
+    <!-- 单位 / 联系 / 合规信息卡 -->
+    <rect x="340" y="424" width="600" height="150" fill="#F2F4F8" rx="6" />
+    <rect x="340" y="424" width="6" height="150" fill="#B5121B" rx="3" />
+    <text x="640" y="474" text-anchor="middle" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="20" font-weight="bold">
+        {{INSTITUTION}}
+    </text>
+    <text x="640" y="512" text-anchor="middle" fill="#1F2933" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">
+        {{DEPARTMENT}}
+    </text>
+    <text x="640" y="547" text-anchor="middle" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{CONTACT_INFO}}
+    </text>
+
+    <!-- 底部信息带 -->
+    <rect x="0" y="666" width="1280" height="54" fill="#F2F4F8" />
+    <rect x="0" y="666" width="1280" height="3" fill="#13315C" />
+    <text x="640" y="700" text-anchor="middle" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{COPYRIGHT}}
+    </text>
+    <text x="1220" y="700" text-anchor="end" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">
+        {{PAGE_NUM}}
+    </text>
+</svg>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+    <!-- 背景 -->
+    <rect width="1280" height="720" fill="#FFFFFF" />
+
+    <!-- 页眉（深蓝 + 红竖条 + 双线） -->
+    <rect x="0" y="0" width="1280" height="78" fill="#13315C" />
+    <rect x="0" y="0" width="6" height="78" fill="#B5121B" />
+    <line x1="0" y1="78" x2="1280" y2="78" stroke="#B5121B" stroke-width="2" />
+    <text x="40" y="50" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28"
+        font-weight="bold">
+        目 录
+    </text>
+    <text x="132" y="50" fill="#FFFFFF" fill-opacity="0.7" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">
+        CONTENTS
+    </text>
+    <text x="1240" y="50" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16" font-weight="bold">
+        {{LOGO}}
+    </text>
+
+    <!-- 目录项 01 -->
+    <rect x="80" y="120" width="540" height="95" fill="#EEF1F6" rx="6" />
+    <rect x="80" y="120" width="6" height="95" fill="#13315C" rx="3" />
+    <text x="120" y="170" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+        font-weight="bold">01</text>
+    <text x="190" y="163" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+        font-weight="bold">{{TOC_ITEM_1_TITLE}}</text>
+    <text x="190" y="197" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">{{TOC_ITEM_1_DESC}}</text>
+
+    <!-- 目录项 02 -->
+    <rect x="660" y="120" width="540" height="95" fill="#EEF1F6" rx="6" />
+    <rect x="660" y="120" width="6" height="95" fill="#13315C" rx="3" />
+    <text x="700" y="170" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+        font-weight="bold">02</text>
+    <text x="770" y="163" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+        font-weight="bold">{{TOC_ITEM_2_TITLE}}</text>
+    <text x="770" y="197" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">{{TOC_ITEM_2_DESC}}</text>
+
+    <!-- 目录项 03 -->
+    <rect x="80" y="240" width="540" height="95" fill="#F7EAEB" rx="6" />
+    <rect x="80" y="240" width="6" height="95" fill="#B5121B" rx="3" />
+    <text x="120" y="290" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+        font-weight="bold">03</text>
+    <text x="190" y="283" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+        font-weight="bold">{{TOC_ITEM_3_TITLE}}</text>
+    <text x="190" y="317" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">{{TOC_ITEM_3_DESC}}</text>
+
+    <!-- 目录项 04 -->
+    <rect x="660" y="240" width="540" height="95" fill="#F7EAEB" rx="6" />
+    <rect x="660" y="240" width="6" height="95" fill="#B5121B" rx="3" />
+    <text x="700" y="290" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36"
+        font-weight="bold">04</text>
+    <text x="770" y="283" fill="#13315C" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22"
+        font-weight="bold">{{TOC_ITEM_4_TITLE}}</text>
+    <text x="770" y="317" fill="#5B6775" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">{{TOC_ITEM_4_DESC}}</text>
+
+    <!-- 目录项 05（可选） -->
+    <rect x="80" y="360" width="540" height="95" fill="none" stroke="#D5DCE6" stroke-width="1"
+        stroke-dasharray="4,4" rx="6" />
+    <text x="350" y="415" text-anchor="middle" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">{{TOC_ITEM_5_TITLE}}</text>
+
+    <!-- 目录项 06（可选） -->
+    <rect x="660" y="360" width="540" height="95" fill="none" stroke="#D5DCE6" stroke-width="1"
+        stroke-dasharray="4,4" rx="6" />
+    <text x="930" y="415" text-anchor="middle" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="16">{{TOC_ITEM_6_TITLE}}</text>
+
+    <!-- 页脚 -->
+    <line x1="40" y1="665" x2="1240" y2="665" stroke="#D5DCE6" stroke-width="1" />
+    <text x="40" y="695" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">
+        {{INSTITUTION}}
+    </text>
+    <text x="1220" y="695" text-anchor="end" fill="#9AA3B0" font-family="Microsoft YaHei, Arial, sans-serif"
+        font-size="14">{{PAGE_NUM}}</text>
+</svg>

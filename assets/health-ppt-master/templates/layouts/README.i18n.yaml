@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write packages/experimental/health-ppt-master/assets/health-ppt-master/templates/layouts/README.md
+README.md: 2d31c63f913b692f1dbd6049a051ac899113bf8c
+README.zh.md: be84aa94211d300bbf4264e968014d1b41d22c43

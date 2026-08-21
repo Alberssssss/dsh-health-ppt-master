@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <!--
+    Forest Plot Template
+    Usage: subgroup effect sizes or meta-analysis pooled estimate with 95% CI
+    Scenarios: meta-analysis, subgroup analysis, multi-study HR/OR/RR comparison
+    Adapt: each row = study/subgroup; square = point estimate (size ~ weight), whisker = 95% CI;
+           bottom diamond = pooled estimate; x-axis is log scale centered on the no-effect line (=1)
+    -->
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FFFFFF"/>
+    <!-- Title -->
+    <text x="60" y="74" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" font-weight="bold" fill="#1A3A5C">Forest Plot — Pooled Effect (95% CI)</text>
+    <text x="60" y="108" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="600" fill="#5A6B7B" letter-spacing="1">HAZARD RATIO · LOG SCALE · REFERENCE LINE AT HR = 1</text>
+
+    <!-- Column headers -->
+    <text x="60" y="170" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#1A3A5C">Subgroup / Study</text>
+    <text x="1235" y="170" text-anchor="end" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#1A3A5C">HR (95% CI)</text>
+    <line x1="60" y1="184" x2="1235" y2="184" stroke="#DCE3EA" stroke-width="1.5"/>
+
+    <g id="axis">
+        <!-- No-effect reference line (HR = 1 → x=730) -->
+        <line x1="730" y1="200" x2="730" y2="500" stroke="#1A3A5C" stroke-width="1.5" stroke-dasharray="5,4"/>
+        <!-- X axis -->
+        <line x1="380" y1="520" x2="1080" y2="520" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="380" y="546" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7B" text-anchor="middle">0.25</text>
+        <text x="555" y="546" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7B" text-anchor="middle">0.5</text>
+        <text x="730" y="546" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1A3A5C" text-anchor="middle">1.0</text>
+        <text x="905" y="546" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7B" text-anchor="middle">2.0</text>
+        <text x="1080" y="546" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7B" text-anchor="middle">4.0</text>
+        <text x="555" y="576" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#0E8C8C" text-anchor="middle">◄ Favors treatment</text>
+        <text x="905" y="576" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#B5121B" text-anchor="middle">Favors control ►</text>
+    </g>
+
+    <g id="studyRows">
+        <!-- Study 1: HR 0.78 (0.60–1.02) -->
+        <text x="60" y="245" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#1F2937">{{STUDY_1}}</text>
+        <line x1="601" y1="240" x2="735" y2="240" stroke="#1A3A5C" stroke-width="2"/>
+        <rect x="660" y="233" width="14" height="14" fill="#0E8C8C"/>
+        <text x="1235" y="245" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7B">0.78 (0.60–1.02)</text>
+
+        <!-- Study 2: HR 0.65 (0.48–0.88) -->
+        <text x="60" y="295" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#1F2937">{{STUDY_2}}</text>
+        <line x1="545" y1="290" x2="698" y2="290" stroke="#1A3A5C" stroke-width="2"/>
+        <rect x="614" y="282" width="16" height="16" fill="#0E8C8C"/>
+        <text x="1235" y="295" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7B">0.65 (0.48–0.88)</text>
+
+        <!-- Study 3: HR 1.15 (0.85–1.55) -->
+        <text x="60" y="345" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#1F2937">{{STUDY_3}}</text>
+        <line x1="689" y1="340" x2="841" y2="340" stroke="#1A3A5C" stroke-width="2"/>
+        <rect x="758" y="333" width="14" height="14" fill="#0E8C8C"/>
+        <text x="1235" y="345" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7B">1.15 (0.85–1.55)</text>
+
+        <!-- Study 4: HR 0.92 (0.70–1.21) -->
+        <text x="60" y="395" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#1F2937">{{STUDY_4}}</text>
+        <line x1="640" y1="390" x2="778" y2="390" stroke="#1A3A5C" stroke-width="2"/>
+        <rect x="702" y="383" width="14" height="14" fill="#0E8C8C"/>
+        <text x="1235" y="395" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7B">0.92 (0.70–1.21)</text>
+
+        <!-- Study 5: HR 0.55 (0.35–0.86) -->
+        <text x="60" y="445" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#1F2937">{{STUDY_5}}</text>
+        <line x1="465" y1="440" x2="692" y2="440" stroke="#1A3A5C" stroke-width="2"/>
+        <rect x="571" y="432" width="16" height="16" fill="#0E8C8C"/>
+        <text x="1235" y="445" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7B">0.55 (0.35–0.86)</text>
+    </g>
+
+    <g id="pooled">
+        <!-- Pooled diamond: HR 0.80 (0.70–0.91) centered x=674 -->
+        <text x="60" y="497" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="17" font-weight="bold" fill="#B5121B">{{POOLED_LABEL}}</text>
+        <polygon points="640,490 674,480 706,490 674,500" fill="#B5121B"/>
+        <text x="1235" y="497" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#B5121B">0.80 (0.70–0.91)</text>
+    </g>
+
+    <g id="heterogeneity">
+        <text x="60" y="640" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#5A6B7B">Heterogeneity: I² = {{I2}}, p = {{HET_P}}　·　Overall effect: Z = {{Z}}, p = {{P_VALUE}}</text>
+    </g>
+
+    <!-- Source Footer -->
+    <text x="60" y="700" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">Source: {{SOURCE}}</text>
+</svg>

@@ -1,0 +1,54 @@
+{
+  "name": "@deepseek-ai/dsh-experimental-health-ppt-master",
+  "description": "Experimental DSH bundle for the health-ppt-master skill and its soft router",
+  "version": "0.1.0-rc.8",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alberssssss/dsh-health-ppt-master.git"
+  },
+  "homepage": "https://github.com/Alberssssss/dsh-health-ppt-master#readme",
+  "bugs": {
+    "url": "https://github.com/Alberssssss/dsh-health-ppt-master/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/invariant.js",
+    "cordis.patch.yml",
+    "lib/router-*.js",
+    "assets",
+    "lib/types/**/*.d.ts"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent": "^0.1.0-rc.8",
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.8",
+    "@deepseek-ai/dsh-session": "^0.1.0-rc.8",
+    "@deepseek-ai/dsh-skill": "^0.1.0-rc.8",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-invariants": "^0.1.0-rc.8"
+  }
+}

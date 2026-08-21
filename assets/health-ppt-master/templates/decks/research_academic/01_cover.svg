@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="ra_cover_band" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#11293F"/>
+      <stop offset="100%" stop-color="#1A3A5C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- 顶部细装饰 -->
+  <rect x="0" y="0" width="1280" height="10" fill="url(#ra_cover_band)"/>
+  <rect x="0" y="0" width="240" height="10" fill="#0E8C8C"/>
+
+  <!-- 左下数据节点装饰 -->
+  <circle cx="90" cy="640" r="5" fill="#0E8C8C" fill-opacity="0.5"/>
+  <circle cx="150" cy="660" r="5" fill="#0E8C8C" fill-opacity="0.3"/>
+  <circle cx="120" cy="610" r="5" fill="#0E8C8C" fill-opacity="0.4"/>
+  <line x1="90" y1="640" x2="150" y2="660" stroke="#0E8C8C" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="90" y1="640" x2="120" y2="610" stroke="#0E8C8C" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- 右上装饰几何 -->
+  <line x1="1110" y1="70" x2="1240" y2="70" stroke="#1A3A5C" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="1150" y1="98" x2="1240" y2="98" stroke="#0E8C8C" stroke-width="1" stroke-opacity="0.35"/>
+  <circle cx="1240" cy="70" r="3" fill="#1A3A5C" fill-opacity="0.3"/>
+  <circle cx="1240" cy="98" r="3" fill="#0E8C8C" fill-opacity="0.4"/>
+
+  <!-- 通用医疗徽标（脉搏，占位标识，可替换为本院 logo） -->
+  <g id="emblem" transform="translate(610,150)">
+    <rect width="60" height="60" rx="14" fill="#0E8C8C"/>
+    <path d="M12 32 H22 L27 18 L35 44 L40 32 H48" fill="none" stroke="#FFFFFF" stroke-width="4"
+      stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+
+  <!-- 主标题 -->
+  <text x="640" y="312" text-anchor="middle" fill="#1A3A5C" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif"
+    font-size="50" font-weight="bold">{{TITLE}}</text>
+
+  <!-- 副标题 -->
+  <text x="640" y="366" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="24">{{SUBTITLE}}</text>
+
+  <!-- 装饰分割线 + 数据节点 -->
+  <line x1="470" y1="406" x2="810" y2="406" stroke="#1A3A5C" stroke-width="1.5"/>
+  <circle cx="640" cy="406" r="6" fill="#0E8C8C"/>
+  <circle cx="540" cy="406" r="4" fill="#0E8C8C" fill-opacity="0.6"/>
+  <circle cx="740" cy="406" r="4" fill="#0E8C8C" fill-opacity="0.6"/>
+
+  <!-- 作者 / 单位 / 会议 -->
+  <text x="640" y="478" text-anchor="middle" fill="#1F2937" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="22" font-weight="bold">{{AUTHOR}}</text>
+  <text x="640" y="514" text-anchor="middle" fill="#5A6B7B" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="18">{{DEPARTMENT}}　｜　{{INSTITUTION}}</text>
+
+  <!-- 底部信息 -->
+  <rect x="0" y="672" width="1280" height="48" fill="#F4F7F9"/>
+  <text x="640" y="702" text-anchor="middle" fill="#9AA7B2" font-family="Microsoft YaHei, Arial, sans-serif"
+    font-size="14">{{DATE}}</text>
+</svg>

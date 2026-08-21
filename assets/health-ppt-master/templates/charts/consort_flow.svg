@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <!--
+    CONSORT Flow Diagram Template
+    Usage: RCT participant flow (enrollment → allocation → follow-up → analysis)
+    Scenarios: randomized controlled trial reporting, study-design page, NMPA/grant trial flow
+    Adapt: replace {{N_*}} counts and arm labels; keep the four-stage vertical structure
+    -->
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FFFFFF"/>
+    <!-- Title -->
+    <text x="60" y="64" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" font-weight="bold" fill="#1A3A5C">CONSORT Flow Diagram</text>
+
+    <!-- Stage labels (left teal tags) -->
+    <g id="stageLabels">
+        <text x="60" y="112" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#0E8C8C">ENROLLMENT</text>
+        <text x="60" y="352" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#0E8C8C">ALLOCATION</text>
+        <text x="60" y="482" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#0E8C8C">FOLLOW-UP</text>
+        <text x="60" y="602" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#0E8C8C">ANALYSIS</text>
+    </g>
+
+    <g id="enrollment">
+        <!-- Assessed for eligibility -->
+        <rect x="340" y="120" width="400" height="58" fill="#E3F1F1" stroke="#1A3A5C" stroke-width="2" rx="6"/>
+        <text x="540" y="146" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">Assessed for eligibility</text>
+        <text x="540" y="168" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#5A6B7B">(n = {{N_ASSESSED}})</text>
+
+        <!-- Excluded side box -->
+        <rect x="820" y="150" width="380" height="130" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="2" rx="6"/>
+        <text x="840" y="178" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">Excluded (n = {{N_EXCLUDED}})</text>
+        <text x="852" y="206" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">• Not meeting criteria (n = {{N_E1}})</text>
+        <text x="852" y="232" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">• Declined to participate (n = {{N_E2}})</text>
+        <text x="852" y="258" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">• Other reasons (n = {{N_E3}})</text>
+
+        <!-- Randomized -->
+        <rect x="340" y="258" width="400" height="58" fill="#E3F1F1" stroke="#1A3A5C" stroke-width="2" rx="6"/>
+        <text x="540" y="284" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">Randomized</text>
+        <text x="540" y="306" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#5A6B7B">(n = {{N_RANDOMIZED}})</text>
+    </g>
+
+    <g id="arrows">
+        <!-- assessed → randomized (vertical) -->
+        <line x1="540" y1="178" x2="540" y2="252" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="534,244 546,244 540,254" fill="#1A3A5C"/>
+        <!-- branch → excluded (right) -->
+        <line x1="540" y1="212" x2="814" y2="212" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="806,206 806,218 816,212" fill="#1A3A5C"/>
+        <!-- randomized → split → allocation -->
+        <line x1="540" y1="316" x2="540" y2="338" stroke="#1A3A5C" stroke-width="2"/>
+        <line x1="340" y1="338" x2="740" y2="338" stroke="#1A3A5C" stroke-width="2"/>
+        <line x1="340" y1="338" x2="340" y2="364" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="334,356 346,356 340,366" fill="#1A3A5C"/>
+        <line x1="740" y1="338" x2="740" y2="364" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="734,356 746,356 740,366" fill="#1A3A5C"/>
+        <!-- allocation → follow-up -->
+        <line x1="340" y1="456" x2="340" y2="494" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="334,486 346,486 340,496" fill="#1A3A5C"/>
+        <line x1="740" y1="456" x2="740" y2="494" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="734,486 746,486 740,496" fill="#1A3A5C"/>
+        <!-- follow-up → analysis -->
+        <line x1="340" y1="576" x2="340" y2="614" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="334,606 346,606 340,616" fill="#1A3A5C"/>
+        <line x1="740" y1="576" x2="740" y2="614" stroke="#1A3A5C" stroke-width="2"/>
+        <polygon points="734,606 746,606 740,616" fill="#1A3A5C"/>
+    </g>
+
+    <g id="allocation">
+        <rect x="140" y="366" width="400" height="90" fill="#FFFFFF" stroke="#0E8C8C" stroke-width="2" rx="6"/>
+        <text x="340" y="394" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">Allocated to {{ARM_A}}</text>
+        <text x="340" y="418" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">(n = {{N_ALLOC_A}}); received as allocated (n = {{N_REC_A}})</text>
+        <text x="340" y="440" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">did not receive (n = {{N_NOTREC_A}})</text>
+
+        <rect x="740" y="366" width="400" height="90" fill="#FFFFFF" stroke="#0E8C8C" stroke-width="2" rx="6"/>
+        <text x="940" y="394" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">Allocated to {{ARM_B}}</text>
+        <text x="940" y="418" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">(n = {{N_ALLOC_B}}); received as allocated (n = {{N_REC_B}})</text>
+        <text x="940" y="440" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">did not receive (n = {{N_NOTREC_B}})</text>
+    </g>
+
+    <g id="followup">
+        <rect x="140" y="496" width="400" height="80" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="2" rx="6"/>
+        <text x="340" y="524" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">Lost to follow-up (n = {{N_LOST_A}})</text>
+        <text x="340" y="552" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">Discontinued intervention (n = {{N_DISC_A}})</text>
+
+        <rect x="740" y="496" width="400" height="80" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="2" rx="6"/>
+        <text x="940" y="524" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">Lost to follow-up (n = {{N_LOST_B}})</text>
+        <text x="940" y="552" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">Discontinued intervention (n = {{N_DISC_B}})</text>
+    </g>
+
+    <g id="analysis">
+        <rect x="140" y="616" width="400" height="80" fill="#E3F1F1" stroke="#0E8C8C" stroke-width="2" rx="6"/>
+        <text x="340" y="644" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">Analysed (n = {{N_ANALYSED_A}})</text>
+        <text x="340" y="672" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">Excluded from analysis (n = {{N_EXCL_A}})</text>
+
+        <rect x="740" y="616" width="400" height="80" fill="#E3F1F1" stroke="#0E8C8C" stroke-width="2" rx="6"/>
+        <text x="940" y="644" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">Analysed (n = {{N_ANALYSED_B}})</text>
+        <text x="940" y="672" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14" fill="#5A6B7B">Excluded from analysis (n = {{N_EXCL_B}})</text>
+    </g>
+</svg>

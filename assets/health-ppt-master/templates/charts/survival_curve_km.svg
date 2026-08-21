@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <!--
+    Kaplan–Meier Survival Curve Template
+    Usage: time-to-event survival comparison between groups
+    Scenarios: clinical research, RCT/cohort overall or progression-free survival, grant pre-data
+    Adapt: replace step coordinates with real survival data; update at-risk table, log-rank p, median
+    -->
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FFFFFF"/>
+    <!-- Title -->
+    <text x="60" y="74" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="32" font-weight="bold" fill="#1A3A5C">Overall Survival (Kaplan–Meier)</text>
+    <text x="60" y="108" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="600" fill="#5A6B7B" letter-spacing="1">PROBABILITY OF SURVIVAL BY TREATMENT GROUP · FOLLOW-UP IN MONTHS</text>
+
+    <g id="axes">
+        <!-- Gridlines -->
+        <line x1="150" y1="150" x2="1180" y2="150" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="150" y1="232" x2="1180" y2="232" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="150" y1="314" x2="1180" y2="314" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="150" y1="396" x2="1180" y2="396" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="150" y1="478" x2="1180" y2="478" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <!-- Y axis labels (survival probability) -->
+        <text x="132" y="155" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">1.0</text>
+        <text x="132" y="237" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">0.8</text>
+        <text x="132" y="319" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">0.6</text>
+        <text x="132" y="401" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">0.4</text>
+        <text x="132" y="483" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">0.2</text>
+        <text x="132" y="565" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8" text-anchor="end">0.0</text>
+        <!-- Axes -->
+        <line x1="150" y1="150" x2="150" y2="560" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="150" y1="560" x2="1180" y2="560" stroke="#CBD5E1" stroke-width="2"/>
+        <!-- X axis labels (months) -->
+        <text x="150" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">0</text>
+        <text x="356" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">12</text>
+        <text x="562" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">24</text>
+        <text x="768" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">36</text>
+        <text x="974" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">48</text>
+        <text x="1180" y="586" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#5A6B7B" text-anchor="middle">60</text>
+        <text x="665" y="616" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#5A6B7B" text-anchor="middle">Time since randomization (months)</text>
+    </g>
+
+    <g id="curveA">
+        <!-- Group A (treatment) — teal step function -->
+        <polyline points="150,150 253,150 253,170 356,170 356,191 459,191 459,211 562,211 562,240 768,240 768,273 974,273 974,294 1180,294"
+                  fill="none" stroke="#0E8C8C" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- Censoring ticks -->
+        <line x1="700" y1="234" x2="700" y2="246" stroke="#0E8C8C" stroke-width="2.5"/>
+        <line x1="900" y1="267" x2="900" y2="279" stroke="#0E8C8C" stroke-width="2.5"/>
+        <line x1="1080" y1="288" x2="1080" y2="300" stroke="#0E8C8C" stroke-width="2.5"/>
+    </g>
+
+    <g id="curveB">
+        <!-- Group B (control) — navy step function -->
+        <polyline points="150,150 253,150 253,199 356,199 356,265 459,265 459,322 562,322 562,376 665,376 665,404 768,404 768,437 974,437 974,470 1180,470"
+                  fill="none" stroke="#1A3A5C" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- Censoring ticks -->
+        <line x1="620" y1="370" x2="620" y2="382" stroke="#1A3A5C" stroke-width="2.5"/>
+        <line x1="900" y1="431" x2="900" y2="443" stroke="#1A3A5C" stroke-width="2.5"/>
+    </g>
+
+    <g id="annotation">
+        <!-- Log-rank / HR callout -->
+        <rect x="820" y="150" width="350" height="80" fill="#E3F1F1" rx="8"/>
+        <rect x="820" y="150" width="6" height="80" fill="#0E8C8C" rx="3"/>
+        <text x="844" y="182" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="bold" fill="#1A3A5C">Log-rank p = {{P_VALUE}}</text>
+        <text x="844" y="212" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#5A6B7B">HR {{HR}} (95% CI {{CI}})</text>
+    </g>
+
+    <g id="legend">
+        <line x1="170" y1="690" x2="210" y2="690" stroke="#0E8C8C" stroke-width="4" stroke-linecap="round"/>
+        <text x="222" y="695" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="600" fill="#475569">{{GROUP_A}} (n={{N_A}})</text>
+        <line x1="470" y1="690" x2="510" y2="690" stroke="#1A3A5C" stroke-width="4" stroke-linecap="round"/>
+        <text x="522" y="695" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="600" fill="#475569">{{GROUP_B}} (n={{N_B}})</text>
+    </g>
+
+    <g id="atRiskTable">
+        <text x="60" y="652" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#5A6B7B">No. at risk</text>
+        <text x="150" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A0}}</text>
+        <text x="356" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A12}}</text>
+        <text x="562" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A24}}</text>
+        <text x="768" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A36}}</text>
+        <text x="974" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A48}}</text>
+        <text x="1180" y="640" font-family="Arial, sans-serif" font-size="12" fill="#0E8C8C" text-anchor="middle">{{A60}}</text>
+        <text x="150" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B0}}</text>
+        <text x="356" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B12}}</text>
+        <text x="562" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B24}}</text>
+        <text x="768" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B36}}</text>
+        <text x="974" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B48}}</text>
+        <text x="1180" y="662" font-family="Arial, sans-serif" font-size="12" fill="#1A3A5C" text-anchor="middle">{{B60}}</text>
+    </g>
+
+    <!-- Source Footer -->
+    <text x="60" y="712" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8">Source: {{SOURCE}}</text>
+</svg>
