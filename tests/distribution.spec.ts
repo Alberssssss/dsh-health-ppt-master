@@ -21,4 +21,17 @@ describe('standalone Git distribution', () => {
     expect(Object.values(manifest.peerDependencies).every(value => value !== '*')).toBe(true)
     expect(manifest.devDependencies.tsdown).toMatch(/^\d+\.\d+\.\d+$/)
   })
+
+  it('documents pnpm canonical GitHub build permission separately from the Git spec', async () => {
+    const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8')
+    expect(readme).toContain(
+      "--allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/<commit>'",
+    )
+    expect(readme).toContain(
+      "'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'",
+    )
+    expect(readme).not.toContain(
+      "--allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@git+https://",
+    )
+  })
 })

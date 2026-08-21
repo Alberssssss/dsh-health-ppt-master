@@ -18,10 +18,10 @@ When running dsh from a source checkout, use `pnpm dsh` in place of `dsh`. Resta
 
 The fixed-tag GitHub archive uses HTTPS and the explicit five-minute fetch timeout accommodates slow links without relying on Git or SSH transport. This repository commits the runtime `lib/` files, so archive installation does not need to compile TypeScript.
 
-The repository is also a self-building Git package. A direct Git install runs its `prepare` script from `src/`, so pnpm 11 requires an allowlist key containing the exact Git URL and commit. Replace both `<commit>` values with the same trusted release commit:
+The repository is also a self-building Git package. A direct Git install runs its `prepare` script from `src/`. pnpm 11 resolves the GitHub dependency through codeload and keys the build permission by that canonical tarball URL, while the dependency argument remains the pinned Git URL. Replace both `<commit>` values with the same trusted release commit:
 
 ```sh
-dsh plugin --profile web add --fetch-timeout=300000 --allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>' 'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'
+dsh plugin --profile web add --fetch-timeout=300000 --allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/<commit>' 'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'
 ```
 
 The Git command deliberately pins an immutable commit. Its build permission allows repository code to execute on the host during installation, outside the agent sandbox; use the prebuilt archive unless source rebuilding is specifically required.

@@ -18,10 +18,10 @@ dsh plugin --profile web add --fetch-timeout=300000 https://codeload.github.com/
 
 固定标签的 GitHub 归档使用 HTTPS；显式设置五分钟下载超时后，慢速链路无需依赖 Git 或 SSH 传输也能完成。本仓库提交运行所需的 `lib/` 文件，因此归档安装不需要编译 TypeScript。
 
-本仓库也是可自构建的 Git 包。直接 Git 安装会通过 `prepare` 脚本从 `src/` 构建，因此 pnpm 11 要求 allowlist 键包含确切的 Git URL 和 commit（提交）。请把两个 `<commit>` 替换成同一个受信任发布提交：
+本仓库也是可自构建的 Git 包。直接 Git 安装会通过 `prepare` 脚本从 `src/` 构建。pnpm 11 会通过 codeload 解析 GitHub 依赖，并以该规范化 tarball URL 作为构建授权键；依赖参数仍使用固定 commit 的 Git URL。请把两个 `<commit>` 替换成同一个受信任发布提交：
 
 ```sh
-dsh plugin --profile web add --fetch-timeout=300000 --allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>' 'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'
+dsh plugin --profile web add --fetch-timeout=300000 --allow-build='@deepseek-ai/dsh-experimental-health-ppt-master@https://codeload.github.com/Alberssssss/dsh-health-ppt-master/tar.gz/<commit>' 'git+https://github.com/Alberssssss/dsh-health-ppt-master.git#<commit>'
 ```
 
 Git 命令有意固定不可变提交。该构建授权允许仓库代码在安装期间于 agent 沙箱之外的宿主机执行；除非明确需要从源码重建，否则应使用预构建归档。
